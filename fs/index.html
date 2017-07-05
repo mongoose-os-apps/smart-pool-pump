@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Connected device demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</head>
+
+<body>
+  <div class="content">
+    <img src="logo.png" style="float:right; height: 50px; border-radius: 3px;">
+    <h1>Connected device ESP - Configure Wifi AP</h1>
+
+    <p>
+      This page allows one to configure access point for the 
+      device to point to.
+    </p>
+
+    <form method="POST" action="/save">
+      <fieldset>
+        <legend>Device settings</legend>
+        <label>SSID:</label> <input type="text"
+          name="ssid" value="" >
+        <label>Password:</label> <input type="password"
+          name="password" value="" >
+
+        <div>
+          <button type="submit">Save Settings</button>
+        </div>
+
+      </fieldset>
+    </form>
+
+    <h1>Connection Status</h1>
+    <label>CPU usage: </label> <b><span id="cpu_usage">&nbsp;</span></b>
+    <label><br>SSID Name: </label> <b><span id="ssid_name"> </span></b>
+    <label><br>IP Address: </label> <b><span id="ip_addr"> </span></b>
+    <label><br>Date: <b><span id="date"> </span></b>
+
+    <script>
+        function updateClock() {
+	  document.getElementById("date").innerHTML = Date()
+	}
+    setInterval(updateClock, 1000);
+    </script>
+  </div> 
+</body>
+</html>
