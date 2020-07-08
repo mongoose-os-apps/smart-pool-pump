@@ -13,15 +13,15 @@
 #include "common/json_utils.h"
 #include "common/platform.h"
 #include "frozen/frozen.h"
-#include "fw/src/mgos_app.h"
-#include "fw/src/mgos_gpio.h"
-#include "fw/src/mgos_mongoose.h"
-#include "fw/src/mgos_sys_config.h"
-#include "fw/src/mgos_hal.h"
-#include "fw/src/mgos_timers.h"
-#include "fw/src/mgos_app.h"
-#include "fw/src/mgos_wifi.h"
-#include "fw/src/mgos_adc.h"
+#include "mgos_app.h"
+#include "mgos_gpio.h"
+#include "mgos_mongoose.h"
+#include "mgos_sys_config.h"
+#include "mgos_hal.h"
+#include "mgos_timers.h"
+#include "mgos_app.h"
+#include "mgos_wifi.h"
+#include "mgos_adc.h"
 // #include "fw/src/mgos_i2c.h"
 //#include "fw/src/mgos_spi.h"
 
@@ -149,7 +149,7 @@ void user_init(void);
 void checkPumpSchedule(void);
 void getDefaultSchedule(tmSchedule_t *schedule);
 
-void becomeStation(struct sys_config_wifi_sta *device_cfg_sta);
+void becomeStation(struct mgos_config_wifi_sta *device_cfg_sta);
 void report_state(void);
 void update_state(void);
 bool savePumpSchedule(void);

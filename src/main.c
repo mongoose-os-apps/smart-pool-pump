@@ -29,7 +29,7 @@ static struct device_settings s_settings = {"ssid", "password"};
  *
  */
 static void handle_save(struct mg_connection *nc, struct http_message *hm) {
-  struct sys_config_wifi_sta device_cfg_sta;
+  struct mgos_config_wifi_sta device_cfg_sta;
 
   memset(&device_cfg_sta, 0, sizeof(device_cfg_sta));
 
@@ -163,8 +163,8 @@ static void http_get_ev_handler(struct mg_connection *nc, int ev, void *ev_data,
 /**
  * Become a station connecting to an existing access point.
  */
-void becomeStation(struct sys_config_wifi_sta *device_cfg_sta) {
-	struct sys_config_wifi_sta *wifi_sta;
+void becomeStation(struct mgos_config_wifi_sta *device_cfg_sta) {
+	struct mgos_config_wifi_sta *wifi_sta;
 
 	/* get current config settings	*/
 	device_cfg = get_cfg();
